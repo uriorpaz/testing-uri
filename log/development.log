@@ -1,0 +1,37 @@
+Started GET "/" for 127.0.0.1 at 2017-05-17 19:35:36 +0200
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3796.1ms)
+  Rendered layouts/_shim.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_header.html.erb (1.2ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 3891ms (Views: 3872.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-05-17 19:35:45 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms) [cache miss]
+  Rendered users/new.html.erb within layouts/application (24.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 147ms (Views: 59.4ms | ActiveRecord: 60.5ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-05-17 19:35:52 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tjkNAcOin6bR1c9QlXy3OiKfdU9gpLVle1PyuDk0QET6VZIf98ww4VcV2uJLX0zFVK7DgxqCapA0U4Z9i5Aaqw==", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (12.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (24.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (5.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.4ms) [cache miss]
+  Rendered users/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms) [cache miss]
+  Rendered layouts/_header.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 129ms (Views: 45.8ms | ActiveRecord: 59.5ms)
+
+
